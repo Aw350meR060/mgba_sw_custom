@@ -262,7 +262,7 @@ void mCoreConfigDirectory(char* out, size_t outLength) {
 	snprintf(out, outLength, "%s/%s", path, binaryName);
 	mkdir(out, 0755);
 #else
-	char* xdgConfigHome = getenv("XDG_CONFIG_HOME");
+	char* xdgConfigHome = getenv("XDG_CONFIG_HOME") + "/emulators/";
 	if (xdgConfigHome && xdgConfigHome[0] == '/') {
 		snprintf(out, outLength, "%s/%s", xdgConfigHome, binaryName);
 		mkdir(out, 0755);
